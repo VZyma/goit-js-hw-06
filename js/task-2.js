@@ -1,5 +1,6 @@
 class Storage {
   #items;
+  
   constructor(items) {
     this.#items = items;
   }
@@ -13,11 +14,7 @@ class Storage {
   }
 
   removeItem(itemToRemove) {
-    for (let i = 0; i < this.#items.length; i++) {
-      if (this.#items[i] === itemToRemove) {
-        this.#items.splice(i, 1);
-      }
-    }
+    this.#items = this.#items.filter(item => item !== itemToRemove);
   }
 }
 
